@@ -1,0 +1,47 @@
+.contenu-movie{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.movie{
+    width:310px;
+
+    margin:3rem;
+    background-color:#221f1f;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px black;
+    position: relative;
+    overflow: hidden;
+}
+.movie img{
+    max-width: 100%;
+}
+.title-rate{
+    display:flex;
+    color:white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+
+}
+.title-rate h1{
+    margin-right: 5px;
+    font-size: 1.5rem;
+}
+.description{
+background-color: white;
+border-radius: 5px;
+box-shadow: 5px 5px 5px black;
+position: absolute;
+bottom: 0;
+right: 0;
+left: 0;
+padding: 1rem;
+transform: translateY(100%);
+transition: transform 0.5s ease-in-out;
+
+}
+.movie:hover .description{
+    transform: translateY(0%);
+}

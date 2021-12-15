@@ -1,0 +1,50 @@
+.contain {
+    max-width: 1920px;
+    padding: 0 40px;
+    margin: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: #000000;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    height: 60px;
+}
+.nav-right{
+    font-size: 2rem;
+    font-weight: 900;
+    color:white
+}
+.nav-right i{
+    color:#c0392b ;
+    margin-right: 5px;
+}
+
+.nav-right span{
+    color:#c0392b
+}
+.nav-left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
