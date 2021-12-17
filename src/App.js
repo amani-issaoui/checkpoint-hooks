@@ -33,7 +33,7 @@ const handleRating=(rat)=>{
   return arr.filter((el)=>
     {
       if ((search!="")&&(rate==0)) {
-        return el.title.toLowerCase().includes(search.toLowerCase())
+        return el.title.toLowerCase().includes(search.toLowerCase().trim())
 
       }
       else if ((rate!=0) &&(search=="")) {
@@ -65,11 +65,11 @@ const handleRating=(rat)=>{
   }
   return (
     <div className="App">
-      <div className='search'>
+      
       
         <Navbar handleSearch={handleSearch}  handleRating={handleRating}/>
         <Featchered/>
-        </div>
+       
       <MoviesList movies={filtrage(moviesFinal)} />
       <Add handleAdd={handleAdd}/>
 

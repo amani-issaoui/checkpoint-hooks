@@ -20,17 +20,22 @@ const [show, setShow] = useState(false);
   
   
   const handleChange = (e) => {
-    setNewmovie({...newmovie,[e.target.name]:e.target.value});
+   setNewmovie({...newmovie,[e.target.name]:e.target.value}); 
+  
   };
 const handleSave=(e)=>{
     e.preventDefault();
+    if((newmovie.title!="")&&(newmovie.description!="")&&(newmovie.posterUrl.startWith("http")) )
+{
     handleAdd(newmovie);
+    
     setNewmovie({
         title: "",
         description: "",
         posterUrl: "",
         rating: 0,
-      })
+      })}
+      else {alert ("you must input the form")}
 }
   return (
     <div>
@@ -44,13 +49,13 @@ const handleSave=(e)=>{
         <Modal.Header closeButton>
           <Modal.Body>
             <Modal.Title>Title </Modal.Title>
-            <input name="title" value={newmovie.title} type="text" onChange={handleChange}  />
+            <input name="title" value={newmovie.title} req="required" type="text" onChange={handleChange}  />
             <Modal.Title>Description</Modal.Title>
-            <input name="description" type="text"  value={newmovie.description} onChange={handleChange} />
+            <input name="description" type="text" req="required" value={newmovie.description} onChange={handleChange} />
             <Modal.Title>Rating</Modal.Title>
-            <input name="rating" type="number" min="0" max="5" onChange={handleChange}  value={newmovie.rating}/>
+            <input name="rating" type="number" req="required" min="0" max="5" onChange={handleChange}  value={newmovie.rating}/>
             <Modal.Title>PosterUrl</Modal.Title>
-            <input name="posterUrl" type="url" onChange={handleChange} value={newmovie.posterUrl}/>
+            <input name="posterUrl" type="url" req="required" onChange={handleChange} value={newmovie.posterUrl}/>
           </Modal.Body>
         </Modal.Header>
 
